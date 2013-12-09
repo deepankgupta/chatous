@@ -34,7 +34,7 @@ def insertInTrainingDict(data, user, words):
 
 
 def convertToInputDict(target_dict):
-  f = open('new_chats_dataset.csv')
+  f = open('../data/new_chats_dataset.csv')
   training_dict = {}
   for line in f.readlines():
     words = line.split(';')
@@ -128,7 +128,7 @@ def scorePrimitive(classifier, input, result):
   print 'Num True Negatives: ', num_true_negatives
   print 'Num False Negatives: ', num_false_negatives
 
-f = open('new_users_dataset.csv')
+f = open('../data/new_users_dataset.csv')
 lines = f.readlines()
 result = convertToTargetDict(lines)
 input = convertToInputDict(result)
