@@ -1,0 +1,28 @@
+For MultinomialNB
+Area Under Curve for MultinomialNB: 0.79
+Precision: 0.62 ; Recall: 0.75 ; F-Score: 0.68
+Num True Positives:  15
+Num False Positives:  9
+Num True Negatives:  75
+Num False Negatives:  5
+For SVC
+Area Under Curve for SVC: 0.52
+Precision: 0.55 ; Recall: 0.30 ; F-Score: 0.39
+Num True Positives:  6
+Num False Positives:  5
+Num True Negatives:  79
+Num False Negatives:  14
+For KNeighborsClassifier
+Area Under Curve for KNeighborsClassifier: 0.37
+Precision: 0.57 ; Recall: 0.20 ; F-Score: 0.30
+Num True Positives:  4
+Num False Positives:  3
+Num True Negatives:  81
+Num False Negatives:  16
+For Pipeline: LinearSVC feature_selection -> RandomForestClassifier
+Area Under Curve for Pipeline: LinearSVC feature_selection -> RandomForestClassifier: 0.70
+Precision: 0.75 ; Recall: 0.45 ; F-Score: 0.56
+Num True Positives:  9
+Num False Positives:  3
+Num True Negatives:  81
+Num False Negatives:  11
