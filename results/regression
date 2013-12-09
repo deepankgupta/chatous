@@ -1,0 +1,4 @@
+Number of users: 39727
+Mean absolute error for LinearRegression: 55.58
+Mean absolute error for LinearSVM: 20.05
+Mean absolute error for NonLinearSVM: 16.77
