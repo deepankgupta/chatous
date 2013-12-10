@@ -14,7 +14,12 @@ There are three different source files:
 
 User Statistics
 ---------------
-We ran a k-means clustering algorithm on the profile data keeping age and gender as variables and got the table in file results/cluster.png. Specifically males outnumber females in the network and the demographics also point to more teenage boys than girls in the networks. Some other statistics about the user profiles based on their country are given in file results/country_dist.png . This points out that the demographic for the network is global with most number of members either in US, India or UK.
+We ran a k-means clustering algorithm on the profile data keeping age and gender as variables and got the table: ![Cluster Table](results/cluster.png) 
+Specifically males outnumber females in the network and the demographics also point to more teenage boys than girls in the networks. 
+
+Some other statistics about the user profiles based on their country are given here:
+![Country distribution](results/country_dist.png). 
+This points out that the demographic for the network is global with most number of members either in US, India or UK.
 
 
 User Classification
@@ -29,8 +34,23 @@ In the data set, the distribution is quite skewed; so instead of using the norma
 
 3. Precision, Recall and F-score.
 
-All the data about the different algorithms is present in the file: results/classification. For the plots of the various curves refer to the results/ folder as well.
+All the data about the different algorithms is present in the file: results/classification. The various plots are:
 
+K-Means Neighbour Precision Recall
+
+![K Means Neighbour](results/KNeighboursClassifierPrecisionRecall.png)
+
+Multinomial Naive Bayes Precision Recall
+
+![Multinomial Naive Bayes](results/MultinomialNaiveBayesPrecisionRecall.png)
+
+Support Vector Machine Precision Recall
+
+![Support Vector Machine](results/SVCPrecisionRecall.png)
+
+Pipeline Precision Recall
+
+![Pipeline Precision Recall](results/PipelinePrecisionRecall.png)
 
 User Quality Regression
 -----------------------
