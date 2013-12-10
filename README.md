@@ -49,6 +49,8 @@ The signal that we used for learning was the word vectors that they had spoken t
 
 The results were pretty much as expected with the non-linear support vector machine with exponential kernel performing really well. All the results are documented in results/regression.
 
+![Regression Algorithm Comparison](results/regressionTable.png)
+
 Analysis of results
 -------------------
 Using the various different machine learning algorithms; we can build a better model for a matching algorithm which will result in better matches by suggesting users with higher quality for chats. We tried doing two different types of analysis: the first analysis to classify users as legitimate clean users and the other analysis to measure the length of conversation a user has as a proxy for user quality.
