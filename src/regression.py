@@ -11,6 +11,9 @@ from sklearn.linear_model import LinearRegression
 from sklearn.externals import joblib
 #from sklearn.linear_model import BayesianRegression
 from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import explained_variance_score
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
 import os
 
 def insertInDict(input, user_num_words_dict, user_num_chats_dict, user, words):
@@ -34,7 +37,7 @@ def insertInDict(input, user_num_words_dict, user_num_chats_dict, user, words):
 
 
 def convertToInputDict():
-  f = open('new_chats_dataset.csv')
+  f = open('../data/new_chats_dataset.csv')
   training_dict = {}
   user_num_chats_dict = {}
   user_num_words_dict = {}
@@ -65,7 +68,7 @@ def vectorize(input_dict, target_dict):
   return (input_vector, target_list)
 
 def regressionUsingSVM(input_train, input_test, result_train, result_test):
-  filename = 'LinearSVM.pkl'
+  filename = '../models/LinearSVM.pkl'
   if os.path.exists(filename):
     classifier = joblib.load(filename)
   else:
@@ -76,7 +79,7 @@ def regressionUsingSVM(input_train, input_test, result_train, result_test):
   score(classifier, input_test, result_test, 'LinearSVM')
 
 def regressionUsingNonLinearSVM(input_train, input_test, result_train, result_test):
-  filename = 'NonLinearSVM.pkl'
+  filename = '../models/NonLinearSVM.pkl'
   if os.path.exists(filename):
     classifier = joblib.load(filename)
   else:
@@ -87,7 +90,7 @@ def regressionUsingNonLinearSVM(input_train, input_test, result_train, result_te
   score(classifier, input_test, result_test, 'NonLinearSVM')
 
 def regressionUsingLinearRegression(input_train, input_test, result_train, result_test):
-  filename = 'LinearRegression.pkl'
+  filename = '../models/LinearRegression.pkl'
   if os.path.exists(filename):
     classifier = joblib.load(filename)
   else:
@@ -98,10 +101,12 @@ def regressionUsingLinearRegression(input_train, input_test, result_train, resul
   print score(classifier, input_test, result_test, 'LinearRegression')
 
 def score(classifier, input_test, result_test, title):
-  # for i in range(0, 100):
-  #   print 'Prediction: %.2f , Actual %.2f' %( classifier.predict(input_test[i]), result_test[i] )
   predictions = classifier.predict(input_test)
   print 'Mean absolute error for %s: %.2f' % (title, mean_absolute_error(result_test, predictions))
+  print 'R2 Score for %s: %.2f' % (title, r2_score(result_test, predictions))
+  print 'Mean Squared error for %s: %.2f' % (title, mean_squared_error(result_test, predictions))
+  print 'Explained variance score for %s: %.2f' % (title, explained_variance_score(result_test, predictions))
+
 
 (input, user_quality) = convertToInputDict()
 print 'Number of users:', len(user_quality.keys())

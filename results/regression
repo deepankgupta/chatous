@@ -1,4 +1,16 @@
 Number of users: 39727
+
 Mean absolute error for LinearRegression: 55.58
+R2 Score for LinearRegression: -55.57
+Mean Squared error for LinearRegression: 90692.83
+Explained variance score for LinearRegression: -55.57
+
 Mean absolute error for LinearSVM: 20.05
+R2 Score for LinearSVM: -23.84
+Mean Squared error for LinearSVM: 39820.61
+Explained variance score for LinearSVM: -23.83
+
 Mean absolute error for NonLinearSVM: 16.77
+R2 Score for NonLinearSVM: -0.06
+Mean Squared error for NonLinearSVM: 1692.11
+Explained variance score for NonLinearSVM: 0.03
