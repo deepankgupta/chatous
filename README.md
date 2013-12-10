@@ -36,20 +36,9 @@ In the data set, the distribution is quite skewed; so instead of using the norma
 
 All the data about the different algorithms is present in the file: results/classification. The various plots are:
 
-K-Means Neighbour Precision Recall
-
-![K Means Neighbour](results/KNeighboursClassifierPrecisionRecall.png)
-
-Multinomial Naive Bayes Precision Recall
-
-![Multinomial Naive Bayes](results/MultinomialNaiveBayesPrecisionRecall.png)
-
-Support Vector Machine Precision Recall
-
-![Support Vector Machine](results/SVCPrecisionRecall.png)
-
-Pipeline Precision Recall
-
+![K Means Neighbour](results/KNeighboursClassifierPrecisionRecall.png) 
+![Multinomial Naive Bayes](results/MultinomialNaiveBayesPrecisionRecall.png) 
+![Support Vector Machine](results/SVCPrecisionRecall.png) 
 ![Pipeline Precision Recall](results/PipelinePrecisionRecall.png)
 
 User Quality Regression
@@ -59,3 +48,16 @@ Besides this the other key parameter in matching users will be the quality of th
 The signal that we used for learning was the word vectors that they had spoken till now. Based on the word vectors of their previous conversations till now we tried to learn a model with 70% of the user set and then use that to predict the quality on the rest of the 30% user base. We tried three different models: linear regresison, linear SVC and non-linear SVC with a exponential kernel.
 
 The results were pretty much as expected with the non-linear support vector machine with exponential kernel performing really well. All the results are documented in results/regression.
+
+Analysis of results
+-------------------
+Using the various different machine learning algorithms; we can build a better model for a matching algorithm which will result in better matches by suggesting users with higher quality for chats. We tried doing two different types of analysis: the first analysis to classify users as legitimate clean users and the other analysis to measure the length of conversation a user has as a proxy for user quality.
+
+For the classification case, the hand-made data set was used. As the dataset was small, algorithms like SVM which require a large dataset did not even perform as well as naive bayes algorithm as mentioned in the graphs above. The ones that did the best were naive bayes and feature selection followed by random forest technique. Although, if we had more data we could probably do a lot better than the current set of estimates.
+
+In the regression case, we could get good quality estimates using non-linear exponential kernel for SVM. We also tried other models such as linear regression and linear kernel SVM but they did not perform as well as the exponential kernel for SVM. With this model, we could predict how likely the user is to keep up a conversation based on their earlier conversations. The dataset was again extremely sparse here with nearly 50% of the example users having done just 1 chat.
+
+
+Conclusion
+----------
+Using machine learning algorithms gives us a pretty good idea on the demographics of the users with clustering. Also with the help of curated data sets; we could build a convincing model to predict whether a user is clean or not. The regression model could also help predict user's inclination to talk based on their past conversational models even though the conversations are few and feature space is very sparse.
