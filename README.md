@@ -18,6 +18,9 @@ The code is built in python using the scikit-learn library. The preprocessed dat
 Data
 ====
 
+The data is offered by Chatous with granular information about the quality of a conversation (e.g. length of a chat), demographic information of the chatter (e.g. age, gender and location), and information about the underlying network. It also contains the user profile ID, which makes it possible to run a panel data analysis to control users’ heterogeneity.
+A key metric for Chatous is the intention to talk, which can be measured approximately by the number of lines in a conversation (Lines). By comparing the number of lines of two users we can infer which user has more intention to talk. The goal of this analysis is to build a model to make the prediction, based on the demographic information of the users.
+
 This is the chats database - so approximately 9 million conversations. The column format is as follows:
 
 Chats Table
@@ -40,11 +43,6 @@ User classification table: Each row contains whether the user is clean/dirty/bot
 |user_id| status |
 ````
 
-Data
------
-
-The data is offered by Chatous with granular information about the quality of a conversation (e.g. length of a chat), demographic information of the chatter (e.g. age, gender and location), and information about the underlying network. It also contains the user profile ID, which makes it possible to run a panel data analysis to control users’ heterogeneity.
-A key metric for Chatous is the intention to talk, which can be measured approximately by the number of lines in a conversation (Lines). By comparing the number of lines of two users we can infer which user has more intention to talk. The goal of this analysis is to build a model to make the prediction, based on the demographic information of the users.
 
 =======
 
