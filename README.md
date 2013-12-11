@@ -82,6 +82,19 @@ The results were pretty much as expected with the non-linear support vector mach
 
 ![Regression Algorithm Comparison](results/regressionTable.png)
 
+
+Truncated Regression
+--------------------
+
+To illustrate the idea behind a truncated regression, imagine that we have a dataset with only two elements [-1,1] and we are interested in the average of the data. It is 0. Now assuming that the data is censored on the left at 0 and we only observe 1, calculation without adjustment will yield 1 instead, which is biased. Similarly, in Chatous dataset, it is unlikely to observe users with extremely low quality, because nobody would like to talk with them and thus researchers will not observe them in the dataset. To adjust this bias, we rely on truncated regression.
+
+According to this method, the mean absolute error is 32.03. It is small than linear regression but larger than non linear regression, because in nature a truncated regression a special form of non linear regression with more assumptions on the process of generating and observing data.  
+
+Mean absolute error: 32.03 with AUC = 0.59
+
+![Truncated Regression Performance](result/truncatedRegression.png)
+
+
 Analysis of results
 -------------------
 Using the various different machine learning algorithms; we can build a better model for a matching algorithm which will result in better matches by suggesting users with higher quality for chats. We tried doing two different types of analysis: the first analysis to classify users as legitimate clean users and the other analysis to measure the length of conversation a user has as a proxy for user quality.
