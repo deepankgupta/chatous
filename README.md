@@ -92,7 +92,7 @@ According to this method, the mean absolute error is 32.03. It is small than lin
 
 Mean absolute error: 32.03 with AUC = 0.59
 
-![Truncated Regression Performance](result/truncatedRegression.png)
+![Truncated Regression Performance](results/truncatedRegression.png)
 
 
 Analysis of results
